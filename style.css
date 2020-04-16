@@ -326,7 +326,6 @@ hr.header-hr {
 /* ----------------------------------------------------------------
     Work Experience
 * ---------------------------------------------------------------- */
-
 .work-experience .exp-item {
     line-height: 33px;
     font-weight: 600;
@@ -367,14 +366,86 @@ hr.header-hr {
 
 .exp-end-item-detail {
     width: 400px;
+    height: 28px;
+
     font-size: 20px;
     line-height: 30px;
 
     margin-bottom: 72px;
 }
 
-/* footer */
-.footer {
-    width: 1920px;
-    background: #415165;
+/* ----------------------------------------------------------------
+    Contact Method
+* ---------------------------------------------------------------- */
+.contact-method {
+    width: 1280px;
+    margin: 0 auto;
+    box-sizing: border-box;
+
+    background-color: #415165;
+    color: #ffffff;
+
+    position: relative;
+
+    text-align: center;
+}
+.contact-method .header {
+    width: 1280px;
+    justify-content: center;
+}
+.contact-method .header-english {
+    color: #ffffff;
+}
+
+.contact-method-wrap {
+    padding-top: 24px;
+    padding-bottom: 48px;
+
+    /* padding-left: 102px; */
+    /* padding-right: 102px; */
+}
+
+/* 用偽元素做背景的方塊 */
+.contact-method-wrap:after {
+    content: "";
+    display: block;
+    height: 100%;
+    width: 1920px;  /* 做一個滿版的寬 */
+    background-color: #415165;
+
+    position: absolute;
+    top: 0;
+    left: -360px;    /* 推左邊 */
+
+    z-index: -1;    /* 壓到後面 */
+}
+
+.contact-method hr {
+    margin-bottom: 40px;
+}
+
+.contact-method ul {
+    position: relative;
+    /* margin-bottom: 16px;  32 + 16 = 48 */
+}
+
+.contact-method ul li {
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 16px;
+}
+
+.contact-method ul li:last-child {
+    margin-bottom: 0px;
+}
+
+.logo {
+    /* display: block; */
+    width: 48px;
+    height: 48px;
+    margin-right: 24px;
+}
+
+.logo .line {
+    margin-right: 0;
 }
