@@ -134,7 +134,9 @@ table {
     border-spacing: 0;
 }
 
-/* ---------------------------------------------------------------- */
+/* ----------------------------------------------------------------
+    General
+* ---------------------------------------------------------------- */
 
 body {
     width: 1920px;
@@ -171,6 +173,7 @@ hr.name {
 
 .header {
     height: 45px;
+    font-weight: 600;
 
     display: flex;
     align-items: center;
@@ -179,14 +182,14 @@ hr.name {
 }
 
 .header-chinese {
-    width: 128px;
+    width: auto;
     font-size: 32px;
 
     margin-right: 16px;
 }
 
 .header-english {
-    width: 95px;
+    width: auto;
     color: #A00404;
     font-size: 24px;
 }
@@ -219,16 +222,11 @@ hr.header-hr {
     background: #96A9C4;
 }
 
+/* ----------------------------------------------------------------
+    Education
+* ---------------------------------------------------------------- */
 .education {
     margin-bottom: 72px;
-}
-
-.education .header-chinese {
-    width: 64px;
-}
-
-.education .header-english {
-    width: 131px;
 }
 
 .item-list .start-item {
@@ -251,6 +249,9 @@ hr.header-hr {
     z-index: 2;
 }
 
+/* ----------------------------------------------------------------
+    Skill
+* ---------------------------------------------------------------- */
 .skill {
     width: 1280px;
     margin: 0 auto;
@@ -260,13 +261,7 @@ hr.header-hr {
     position: relative;
 }
 
-.skill .header-chinese {
-    width: 64px;
-    /* color: #ffffff; */
-}
-
 .skill .header-english {
-    width: 79px;
     color: #ffffff;
 }
 
@@ -276,6 +271,8 @@ hr.header-hr {
 
     padding-left: 102px;
     padding-right: 102px;
+
+    margin-bottom: 72px;
 }
 
 /* 用偽元素做背景的方塊 */
@@ -325,6 +322,57 @@ hr.header-hr {
     left: -24px;
     z-index: 2;
 }
+
+/* ----------------------------------------------------------------
+    Work Experience
+* ---------------------------------------------------------------- */
+
+.work-experience .exp-item {
+    line-height: 33px;
+    font-weight: 600;
+}
+
+.exp-start-item,
+.exp-end-item {
+    margin-bottom: 8px;
+}
+
+.exp-logo-hex {
+    display: block;
+    width: auto;
+    height: auto;
+    margin-bottom: 8.15px;
+}
+
+.exp-item-detail {
+    width: 642px;
+    font-size: 20px;
+    line-height: 30px;
+
+    padding-bottom: 4px;
+    margin-bottom: 32px;
+}
+
+.exp-middle-item {
+    margin-bottom: 32px;
+}
+
+.exp-logo-simtree {
+    display: block;
+    width: 72px;
+    height: 73px;
+
+    margin-bottom: 8px;
+}
+
+.exp-end-item-detail {
+    width: 400px;
+    font-size: 20px;
+    line-height: 30px;
+
+    margin-bottom: 72px;
+}
+
 /* footer */
 .footer {
     width: 1920px;
