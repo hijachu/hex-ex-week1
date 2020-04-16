@@ -331,6 +331,10 @@ hr.header-hr {
     margin-bottom: 22px;
 }
 
+.work-experience .content {
+    position: relative;
+}
+
 .exp-item {
     line-height: 33px;
     font-weight: 600;
@@ -339,6 +343,19 @@ hr.header-hr {
 .exp-start-item,
 .exp-end-item {
     margin-bottom: 8px;
+}
+.exp-start-item::before {
+    content: "";
+    /* 偽元素需設定成 "絕對位置" */
+    position: absolute;
+    border-left: 1px solid #96A9C4;
+    /* 一定要加上 top, bottom 的值，線條才會有高度 */
+    top: 0px;
+    bottom: 0px;
+    height: 647px;
+
+    left: -24px;
+    z-index: 2;
 }
 
 .exp-logo-hex {
