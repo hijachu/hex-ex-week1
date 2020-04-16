@@ -202,6 +202,7 @@ hr.header-hr {
     font-size: 24px;
     line-height: 35px;
 
+    margin-left: 48px;
     margin-bottom: 72px;
 }
 
@@ -326,7 +327,11 @@ hr.header-hr {
 /* ----------------------------------------------------------------
     Work Experience
 * ---------------------------------------------------------------- */
-.work-experience .exp-item {
+.work-experience .header-hr {
+    margin-bottom: 22px;
+}
+
+.exp-item {
     line-height: 33px;
     font-weight: 600;
 }
