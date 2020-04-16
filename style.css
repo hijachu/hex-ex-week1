@@ -147,7 +147,7 @@ body {
     margin: 0 auto;
 }
 
-h1 {
+h1.name-title {
     width: 288px;
     font-size: 80px;
     line-height: 90px;
@@ -200,7 +200,6 @@ hr.header-hr {
     line-height: 35px;
 
     margin-bottom: 72px;
-
 }
 
 .item-prefix-bullet {
@@ -220,6 +219,10 @@ hr.header-hr {
     background: #96A9C4;
 }
 
+.education {
+    margin-bottom: 72px;
+}
+
 .education .header-chinese {
     width: 64px;
 }
@@ -228,11 +231,11 @@ hr.header-hr {
     width: 131px;
 }
 
-
 .item-list .start-item {
     margin-bottom: 32px;
 }
 
+/* pseudo element to draw a vertical line */
 .start-item::after {
     content: "";
     /* 偽元素需設定成 "絕對位置" */
@@ -248,11 +251,80 @@ hr.header-hr {
     z-index: 2;
 }
 
-.skill-stripe {
-
+.skill {
+    width: 1280px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    background-color: #415165;
+    color: #ffffff;
+    position: relative;
 }
 
+.skill .header-chinese {
+    width: 64px;
+    /* color: #ffffff; */
+}
 
+.skill .header-english {
+    width: 79px;
+    color: #ffffff;
+}
+
+.skill-wrap {
+    padding-top: 24px;
+    padding-bottom: 56px;
+
+    padding-left: 102px;
+    padding-right: 102px;
+}
+
+/* 用偽元素做背景的方塊 */
+.skill-wrap:after {
+    content: "";
+    display: block;
+    height: 360px;
+    width: 1920px;   /* 做一個滿版的寬 */
+
+    /* 垂直置中定位 */
+    position: absolute;
+    /* (494-360)/2 */
+    top: 67px;
+    /* 推左邊 */
+    left: -360px;
+    background-color: #96A9C4;
+    z-index: -1;    /* 壓到後面 */
+}
+
+.skill hr {
+    margin-bottom: 40px;
+}
+
+.skill ul {
+    width: 216px;
+    position: relative;
+}
+
+.skill ul li {
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 16px;
+}
+.skill ul li:last-child {
+    margin-bottom: 0px;
+}
+.skill ul li::before {
+    content: "";
+    /* 偽元素需設定成 "絕對位置" */
+    position: absolute;
+    border-left: 1px solid #96A9C4;
+    /* 一定要加上 top, bottom 的值，線條才會有高度 */
+    top: 0px;
+    bottom: 0px;
+    height: 321px;
+
+    left: -24px;
+    z-index: 2;
+}
 /* footer */
 .footer {
     width: 1920px;
