@@ -140,7 +140,7 @@ table {
 * ---------------------------------------------------------------- */
 
 body {
-    font-family: 'Andale Mono', "微軟正黑體", sans-serif;
+    font-family: "微軟正黑體", sans-serif;
 }
 
 .container {
@@ -181,14 +181,12 @@ hr.name {
 }
 
 .header-chinese {
-    /* width: auto; */
     font-size: 32px;
 
     margin-right: 16px;
 }
 
 .header-english {
-    /* width: auto; */
     color: #A00404;
     font-size: 24px;
 }
@@ -215,9 +213,11 @@ hr.header-hr {
     content: '';
     width: 16px;
     height: 16px;
+
     position: absolute;
     top: 10px;      /* 36/2 - 16/2 */
     left: -32px;    /* -16 + -16 */
+
     border-radius: 50%;
     background: #96A9C4;
 }
@@ -257,10 +257,24 @@ hr.header-hr {
     Skill
 * ---------------------------------------------------------------- */
 .skill {
-    /* margin: 0 auto; */
-    box-sizing: border-box;
-    background-color: #415165;
-    color: #ffffff;
+    position: relative;
+}
+
+/* 用偽元素做背景的方塊 */
+.skill::before {
+    content: "";
+    height: 360px;
+    /* 填滿body */
+    width: 100%;
+
+    /* 垂直置中定位 */
+    position: absolute;
+    /* (494-360)/2 */
+    top: 67px;
+
+    background-color: #96A9C4;
+    /* 壓到後面 */
+    z-index: -1;
 }
 
 .skill .header {
@@ -272,6 +286,10 @@ hr.header-hr {
 }
 
 .skill-wrap {
+    box-sizing: border-box;
+    background-color: #415165;
+    color: #ffffff;
+
     padding-top: 24px;
     padding-bottom: 56px;
 
@@ -279,26 +297,6 @@ hr.header-hr {
     padding-right: 102px;
 
     margin-bottom: 72px;
-
-    position: relative;
-}
-
-/* 用偽元素做背景的方塊 */
-.skill-wrap::before {
-    content: "";
-    height: 360px;
-    /* 盡可能填滿body */
-    width: 121.5%;
-
-    /* 垂直置中定位 */
-    position: absolute;
-    /* (494-360)/2 */
-    top: 67px;
-    /* 推左邊 */
-    left: -19%;
-
-    background-color: #96A9C4;
-    z-index: -1;    /* 壓到後面 */
 }
 
 .skill hr {
@@ -409,16 +407,25 @@ hr.header-hr {
     Contact Method
 * ---------------------------------------------------------------- */
 .contact-method {
-    margin: 0 auto;
-    box-sizing: border-box;
-
-    background-color: #415165;
-    color: #ffffff;
-
+    /* margin: 0 auto; */
     position: relative;
-
-    text-align: center;
 }
+
+/* 用偽元素做背景的方塊 */
+.contact-method::after {
+    content: "";
+    height: 100%;
+    /* 填滿body的寬 */
+    width: 100%;
+    background-color: #415165;
+
+    position: absolute;
+    top: 0;
+
+    /* 壓到後面 */
+    z-index: -1;
+}
+
 .contact-method .header {
     justify-content: center;
 }
@@ -427,24 +434,17 @@ hr.header-hr {
 }
 
 .contact-method-wrap {
+    box-sizing: border-box;
+
+    background-color: #415165;
+    color: #ffffff;
+
+    text-align: center;
+
     padding-top: 24px;
     padding-bottom: 48px;
 }
 
-/* 用偽元素做背景的方塊 */
-.contact-method-wrap:after {
-    content: "";
-    height: 100%;
-    width: 121.5%;  /* 做一個滿版的寬 */
-    background-color: #415165;
-
-    position: absolute;
-    top: 0;
-    /* 推左邊 */
-    left: -19%;
-
-    z-index: -1;    /* 壓到後面 */
-}
 
 .contact-method hr {
     margin-bottom: 40px;
