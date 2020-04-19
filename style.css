@@ -109,6 +109,7 @@ section {
 
 body {
     line-height: 1;
+    position: relative;
 }
 
 ol,
@@ -139,8 +140,6 @@ table {
 * ---------------------------------------------------------------- */
 
 body {
-    width: 1920px;
-    /* height: 3047px; */
     font-family: 'Andale Mono', "微軟正黑體", sans-serif;
 }
 
@@ -182,14 +181,14 @@ hr.name {
 }
 
 .header-chinese {
-    width: auto;
+    /* width: auto; */
     font-size: 32px;
 
     margin-right: 16px;
 }
 
 .header-english {
-    width: auto;
+    /* width: auto; */
     color: #A00404;
     font-size: 24px;
 }
@@ -237,14 +236,18 @@ hr.header-hr {
 /* pseudo element to draw a vertical line */
 .start-item::after {
     content: "";
+
     /* 偽元素需設定成 "絕對位置" */
     position: absolute;
+
     border-left: 1px solid #96A9C4;
     /* 一定要加上 top, bottom 的值，線條才會有高度 */
     /* 設定 top 0px, bottom 0px 就會剛好撐滿整個 ul 的高度 */
     top: 17px;      /* (33+1) / 2  圓心對齊文字位置中心位置 */
-    bottom: 0px;
+    bottom: 0;
+
     height: 70px;    /* 32 + 33 + 5 */
+
     /* 為了要讓線條對準圓心，因此需往左 16（圓圈和文字之間的距離）+ 8（圓圈的半徑）= 24px */
     left: -24px;
     z-index: 2;
@@ -254,14 +257,16 @@ hr.header-hr {
     Skill
 * ---------------------------------------------------------------- */
 .skill {
-    width: 1280px;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     box-sizing: border-box;
     background-color: #415165;
     color: #ffffff;
-    position: relative;
 }
 
+.skill .header {
+    /* 522 - 102 = 420 */
+    margin-left: 420px;
+}
 .skill .header-english {
     color: #ffffff;
 }
@@ -274,21 +279,24 @@ hr.header-hr {
     padding-right: 102px;
 
     margin-bottom: 72px;
+
+    position: relative;
 }
 
 /* 用偽元素做背景的方塊 */
-.skill-wrap:after {
+.skill-wrap::before {
     content: "";
-    display: block;
     height: 360px;
-    width: 1920px;   /* 做一個滿版的寬 */
+    /* 盡可能填滿body */
+    width: 121.5%;
 
     /* 垂直置中定位 */
     position: absolute;
     /* (494-360)/2 */
     top: 67px;
     /* 推左邊 */
-    left: -360px;
+    left: -19%;
+
     background-color: #96A9C4;
     z-index: -1;    /* 壓到後面 */
 }
@@ -298,6 +306,7 @@ hr.header-hr {
 }
 
 .skill ul {
+    margin-left: 420px;
     width: 216px;
     position: relative;
 }
@@ -400,7 +409,6 @@ hr.header-hr {
     Contact Method
 * ---------------------------------------------------------------- */
 .contact-method {
-    width: 1280px;
     margin: 0 auto;
     box-sizing: border-box;
 
@@ -412,7 +420,6 @@ hr.header-hr {
     text-align: center;
 }
 .contact-method .header {
-    width: 1280px;
     justify-content: center;
 }
 .contact-method .header-english {
@@ -422,22 +429,19 @@ hr.header-hr {
 .contact-method-wrap {
     padding-top: 24px;
     padding-bottom: 48px;
-
-    /* padding-left: 102px; */
-    /* padding-right: 102px; */
 }
 
 /* 用偽元素做背景的方塊 */
 .contact-method-wrap:after {
     content: "";
-    display: block;
     height: 100%;
-    width: 1920px;  /* 做一個滿版的寬 */
+    width: 121.5%;  /* 做一個滿版的寬 */
     background-color: #415165;
 
     position: absolute;
     top: 0;
-    left: -360px;    /* 推左邊 */
+    /* 推左邊 */
+    left: -19%;
 
     z-index: -1;    /* 壓到後面 */
 }
@@ -448,7 +452,6 @@ hr.header-hr {
 
 .contact-method ul {
     position: relative;
-    /* margin-bottom: 16px;  32 + 16 = 48 */
 }
 
 .contact-method ul li {
@@ -462,7 +465,6 @@ hr.header-hr {
 }
 
 .logo {
-    /* display: block; */
     width: 48px;
     height: 48px;
     margin-right: 24px;
