@@ -353,8 +353,10 @@ hr.header-hr {
 }
 .exp-start-item::before {
     content: "";
+
     /* 偽元素需設定成 "絕對位置" */
     position: absolute;
+
     border-left: 1px solid #96A9C4;
     /* 一定要加上 top, bottom 的值，線條才會有高度 */
     top: 0px;
